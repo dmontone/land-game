@@ -23,19 +23,26 @@ export class Pencil {
         
         // COLOR LAYERS
         
+        // Rivers
+        Rect(() => {
+            if(tile.region){
+                this.ctx.fillStyle = 'rgba(' + 10 * tile.region + ', 0, 0, 1)'
+            }
+        })
+
         // Fertility
-        Rect(() => { this.ctx.fillStyle = 'rgba(0, 200, 0, ' + ((tile.fertil/100) - 0.15) + ')' })
+        // Rect(() => { this.ctx.fillStyle = 'rgba(0, 200, 0, ' + ((tile.fertil/100) - 0.15) + ')' })
 
         // Heights
-        Rect(() => {
-            if( tile.bin == 0 ) return
-            let color = '255, 30, 30'
-            if( tile.height <= 20 ) color = '175, 255, 90'
-            if( tile.height <= 40 ) color = '225, 255, 90'
-            if( tile.height <= 60 ) color = '255, 255, 90'
-            if( tile.height <= 80 ) color = '255, 160, 90'
-            this.ctx.fillStyle = 'rgba(' + color + ', ' + ((tile.height/100) + .5) + ')'
-        })
+        // Rect(() => {
+        //     if( tile.bin == 0 ) return
+        //     let color = '255, 30, 30'
+        //     if( tile.height <= 20 ) color = '175, 255, 90'
+        //     if( tile.height <= 40 ) color = '225, 255, 90'
+        //     if( tile.height <= 60 ) color = '255, 255, 90'
+        //     if( tile.height <= 80 ) color = '255, 160, 90'
+        //     this.ctx.fillStyle = 'rgba(' + color + ', ' + ((tile.height/100) + .5) + ')'
+        // })
         
     }
 

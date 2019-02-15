@@ -2,35 +2,25 @@ import { Map } from './map'
 
 export class Game {
     
-    constructor(){
+    constructor(element){
 
-        this.canvas = this.generateCanvas(document.body)
-        this.ctx = this.canvas.getContext('2d')
-
-        this.worldDimensions = { width: 100, height: 100 }
-
+        this.$ = element
         this.atlas = new Map({
-            type: 'atlas',
-            dimensions: this.worldDimensions
-        }, this.canvas, this.ctx)
-        
-        this.canvas.onclick = e => {
-            const tileX = Math.round( e.clientX / 6 ),
-                  tileY = Math.round( e.clientY / 6 )
-            this.atlas._tile(tileX, tileY).onClick(e)
-        }
+            dim: { w: 100, h: 100 },
+            tileDim: { w: 6, h: 6 }
+        })
 
-    }
 
-    generateCanvas(parent){
-        const wrapper = document.createElement('div')
-        wrapper.id = 'wrapper'
-        const canvas = document.createElement('canvas')
-        canvas.width = 600
-        canvas.height = 600
-        wrapper.appendChild(canvas)
-        parent.appendChild(wrapper)
-        return canvas
+
+        // this.canvas = this._genCanvas(document.body)
+        // this.ctx = this.canvas.getContext('2d')
+
+        // this.atlas = new Map({
+        //     type: 'atlas',
+        //     dimensions: { width: 100, height: 100 },
+        //     tileDimensions: { width: 5, height: 5 }
+        // }, this.canvas, this.ctx)
+
     }
 
 }

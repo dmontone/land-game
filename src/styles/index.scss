@@ -1,1 +1,53 @@
-html, body, div, canvas { margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; background: #000 }
+
+* { box-sizing: border-box; }
+
+#map {
+    position: relative;
+    .tile {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid rgba(#FFF, .1);
+
+        &.land { background: #573B0C;
+            // &.high {
+            //     &-0 { background: #00FF00; }
+            //     &-1 { background: #33DD00; }
+            //     &-2 { background: #55BB00; }
+            //     &-3 { background: #779900; }
+            //     &-4 { background: #997700; }
+            //     &-5 { background: #BB5500; }
+            //     &-6 { background: #DD3300; }
+            //     &-7 { background: #FF0000; }
+            // }
+            
+            // &.fertil {
+            //     &-0 { background: #FFFFFF; }
+            //     &-1 { background: #DDFFDD; }
+            //     &-2 { background: #BBFFBB; }
+            //     &-3 { background: #99BB99; }
+            //     &-4 { background: #77CC77; }
+            //     &-5 { background: #55CC55; }
+            //     &-6 { background: #33CC33; }
+            //     &-7 { background: #00FF00; }
+            // }
+        }
+        &.sea { background: #006994 }
+        // &.island { background: #553399 }
+        
+        // &.region-1 { background: #F00; }
+        // &.region-2 { background: #C50; }
+        // &.region-3 { background: #A83; }
+        // &.region-4 { background: #8A8; }
+        // &.region-5 { background: #3CA; }
+        // &.region-6 { background: #0CF; }
+        // &.region-7 { background: #0BF; }
+        // &.region-8 { background: #08F; }
+        // &.region-9 { background: #03F; }
+        // &.region-10 { background: #00F; }
+
+        &.debug { background: rgba(#F00, .5) !important }
+
+    }   
+}
